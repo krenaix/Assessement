@@ -12,7 +12,7 @@ import { log_out } from 'src/app/store/feature-stores/authentication/actions';
   styleUrls: ['./top-nav.component.scss']
 })
 export class TopNavComponent implements OnInit {
-  
+
   user$ = this.store$.select(loggedInUser);
 
 

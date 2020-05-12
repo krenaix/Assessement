@@ -22,7 +22,6 @@ export function logout(reducer: ActionReducer<any>): ActionReducer<any> {
     // console.log('action', action);
 
     if (action.type === log_out.type) {
-      console.log('logging out', action);
       state = undefined;
     }
     return reducer(state, action);

@@ -15,20 +15,17 @@ export class UserEffects {
     login$ = createEffect(() => this.actions$.pipe(
         ofType(login),
         mergeMap((payload) => {
-            console.log('login effect');
             return this.authService.authenticate(payload.phoneNumber, payload.password
             );
         }),
-        map(userWithPhoneBook => {
-            console.log('user with phonebook', userWithPhoneBook);
-            if (userWithPhoneBook.user) {
-                return login_successful({ user: userWithPhoneBook.user, phonebook: userWithPhoneBook.phoneEntries });
+        map(user => {
+            if (user) {
+                return login_successful({ user });
             } else {
                 return login_failed();
             }
         }),
         catchError(error => {
-            console.log('error is', error);
             return of(login_failed());
         })
     )

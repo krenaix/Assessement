@@ -8,6 +8,7 @@ import { tap, switchMapTo, switchMap, map, take, first } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { userToken } from '../store/feature-stores/authentication/selectors';
 import { log_out } from '../store/feature-stores/authentication/actions';
+import { get_contacts } from '../store/feature-stores/dashboard/actions';
 
 @Injectable()
 export class HomeGuard implements CanActivate {
@@ -24,7 +25,7 @@ export class HomeGuard implements CanActivate {
         if (this.tokenService.tokenExpired(token)) {
           this.store$.dispatch(log_out());
         } else {
-          // this.store$.dispatch(fetch_phonebook());
+          this.store$.dispatch(get_contacts());
         }
       }),
       switchMap(token => this.tokenService.tokenExpired(token) ? of(false) : of(true))

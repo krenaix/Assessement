@@ -28,10 +28,14 @@
                       <div class="form-group">
                           <mat-form-field class="full-width">
                             <input formControlName="cellphoneNumber" matInput placeholder="Cellphone number" autocomplete="mobile">
-                            <mat-error *ngIf="registerForm.get('cellphoneNumber').hasError('required')">Please enter your cellphone number
-                            </mat-error>
-                            <mat-error *ngIf="registerForm.get('cellphoneNumber').hasError('email')">Please enter a valid cellphone number
-                            </mat-error>
+                            <mat-hint>e.g 0764523658 or +27764523658 or 27764523658</mat-hint>
+                                <mat-error *ngIf="registerForm.get('cellphoneNumber').hasError('required')">
+                                    Cellphone number is
+                                    required
+                                </mat-error>
+                                <mat-error *ngIf="registerForm.get('cellphoneNumber').errors?.invalidDataType">
+                                    Invalid cellphone number. cellphone number cannot contain non numeric characters, spaces or tabs
+                                </mat-error>
                         </mat-form-field>
                       </div>
                       <div class="form-group">

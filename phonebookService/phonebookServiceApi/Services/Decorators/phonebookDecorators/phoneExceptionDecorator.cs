@@ -26,11 +26,70 @@ namespace phonebookServiceApi.services.decorators.phonebookDecorators
             {
                 return _phoneService.SearchPhonebook(searchName, searchNumber, phonebookId);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError($"Exception occurred during search. phonebookId: {phonebookId}, stackTrace: {ex.ToString()}");
 
                 throw ex;
+            }
+        }
+
+        public PhoneEntriesDTO RemoveContact(string searchName, string searchNumber, int phonebookId, int entryId)
+        {
+            try
+            {
+                return _phoneService.RemoveContact(searchName, searchNumber, phonebookId, entryId);
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Exception occurred while removing a contact. phonebookId: {phonebookId}, stackTrace: {ex.ToString()}");
+
+                throw ex;
+            }
+        }
+
+        public PhoneEntriesDTO GetPhoneEntries(int userId)
+        {
+            try
+            {
+                return _phoneService.GetPhoneEntries(userId);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Exception occurred while fetching contacts. userId: {userId}, stackTrace: {ex.ToString()}");
+
+                throw ex;
+            }
+        }
+
+        public bool CreateContact(EntryDTO newEntry, int phonebookId)
+        {
+            try
+            {
+                return _phoneService.CreateContact(newEntry, phonebookId);
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Exception occurred while creating contact. phonebookId: {phonebookId}, stackTrace: {ex.ToString()}");
+
+                return false;
+            }
+        }
+
+        public bool EditContact(EntryDTO existingEntry)
+        {
+            try
+            {
+                return _phoneService.EditContact(existingEntry);
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Exception occurred while editing contact. entryId: {existingEntry.Id}, stackTrace: {ex.ToString()}");
+
+                return false;
             }
         }
     }

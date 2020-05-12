@@ -9,7 +9,7 @@ const reducer = createReducer(
         ...state,
         loginStatus: StatusEnum.Busy
     })),
-    on(authActions.login_successful, (state, { user, phonebook }) => ({
+    on(authActions.login_successful, (state, { user }) => ({
         ...state,
         loginStatus: StatusEnum.Done,
         user

@@ -68,23 +68,12 @@ namespace phonebookServiceApi.Repository.Data
             return _phonebookContext.User.Where(user => user.Username == phoneNumber).FirstOrDefault();
         }
 
-        public (User, PhoneEntries) Login (string phoneNumber)
+        public User Login (string phoneNumber)
         {
             _phonebookContext.ChangeTracker.LazyLoadingEnabled = false;
             var user = _phonebookContext.User.Where(user => user.Username == phoneNumber).FirstOrDefault();
-            var phonebook = _phonebookContext.Phonebook.Where(ph => ph.UserId == user.Id).FirstOrDefault();
 
-            var phoneBookEntries = _phonebookContext.PhoneBookEntries.Where(pe => pe.Phonebook_id == phonebook.Id).Include(p => p.Entry)
-            .Select(pe => pe.Entry).ToList();
-
-            var phoneEntries = new PhoneEntries
-            {
-                Id = phonebook.Id,
-                Entries = phoneBookEntries,
-                Name = phonebook.Name
-            };
-
-            return (user, phoneEntries);
+            return user;
         }
     }
 }

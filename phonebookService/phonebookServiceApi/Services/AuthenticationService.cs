@@ -31,19 +31,18 @@ namespace phonebookServiceApi.services
              _mapper = mapper;
         }
 
-        public (UserDto user, PhoneEntriesDTO phoneWithEntries) Authenticate(string phoneNumber, string password)
+        public UserDto Authenticate(string phoneNumber, string password)
         {
-            var userPhoneEntry = _authRepository.Login(phoneNumber);
-            if (userPhoneEntry.user != null)
+            var user = _authRepository.Login(phoneNumber);
+            if (user != null)
             {
-                var unHashedPassword = _passwordHasher.Check(userPhoneEntry.user.Password, password);
+                var unHashedPassword = _passwordHasher.Check(user.Password, password);
 
                 if (!unHashedPassword.Verified)
-                    return (null, null);
+                    return null;
                 
 
-                var userDto = _mapper.Map<UserDto>(userPhoneEntry.user);
-                var phoneWithEntries  = _mapper.Map<PhoneEntriesDTO>(userPhoneEntry.phoneWithEntries);
+                var userDto = _mapper.Map<UserDto>(user);
 
 
                 // authentication successful so generate jwt token
@@ -53,7 +52,7 @@ namespace phonebookServiceApi.services
                 {
                     Subject = new ClaimsIdentity(new Claim[]
                     {
-                    new Claim(ClaimTypes.Name, userPhoneEntry.user.Id.ToString())
+                    new Claim(ClaimTypes.Name, user.Id.ToString())
                     }),
                     Expires = DateTime.UtcNow.AddHours(int.Parse(_appSettings.TokenExpirationTimeInHours)),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
@@ -61,11 +60,11 @@ namespace phonebookServiceApi.services
                 var token = tokenHandler.CreateToken(tokenDescriptor);
                 userDto.Token = tokenHandler.WriteToken(token);
 
-                return (userDto, phoneWithEntries);
+                return userDto;
             }
             else
             {
-                return (null, null);
+                return null;
             }
         }
 

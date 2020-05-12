@@ -11,6 +11,8 @@ using phonebookServiceApi.services.helpers;
 using phonebookServiceApi.Repository.Interfaces;
 using phonebookServiceApi.services.dtos;
 using AutoMapper;
+using System.Threading.Tasks;
+using phonebookServiceApi.Repository.Model;
 
 namespace phonebookServiceApi.services
 {
@@ -27,7 +29,7 @@ namespace phonebookServiceApi.services
         {
             _phoneRepository = phoneRepository;
             _appSettings = appSettings.Value;
-             _mapper = mapper;
+            _mapper = mapper;
         }
 
         public PhoneEntriesDTO SearchPhonebook(string searchName, string searchNumber, int phonebookId)
@@ -35,6 +37,30 @@ namespace phonebookServiceApi.services
             var phoneEntriedDto = _mapper.Map<PhoneEntriesDTO>(_phoneRepository.SearchPhonebook(searchName, searchNumber, phonebookId));
 
             return phoneEntriedDto;
+        }
+
+        public PhoneEntriesDTO RemoveContact(string searchName, string searchNumber, int phonebookId, int entryId)
+        {
+            var phoneEntriedDto = _mapper.Map<PhoneEntriesDTO>(_phoneRepository.RemoveContact(searchName, searchNumber, phonebookId, entryId));
+
+            return phoneEntriedDto;
+        }
+
+        public PhoneEntriesDTO GetPhoneEntries(int userId)
+        {
+            var phoneEntriedDto = _mapper.Map<PhoneEntriesDTO>(_phoneRepository.GetPhoneEntries(userId));
+
+            return phoneEntriedDto;
+        }
+
+        public bool CreateContact(EntryDTO newEntry, int phonebookId)
+        {
+            return _phoneRepository.CreateContact(_mapper.Map<Entry>(newEntry), phonebookId);
+        }
+
+        public bool EditContact(EntryDTO existingEntry)
+        {
+            return _phoneRepository.EditContact(_mapper.Map<Entry>(existingEntry));
         }
     }
 }

@@ -16,8 +16,6 @@ export class AuthGuard implements CanActivate {
               private store$: Store<{}>) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
-    const origin = route.data['origin'];
-    console.log('origin is ', origin);
     return this.store$.pipe(
       select(userToken),
       first(),

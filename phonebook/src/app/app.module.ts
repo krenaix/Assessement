@@ -18,7 +18,6 @@ import { LoginComponent } from './pages/login/login.component';
 import { reducers, metaReducers } from './reducers';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptorService } from './services/auth-service/auth-interceptor.service';
-import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { SharedModule } from './shared/shared.module';
 import { environment } from 'src/environments/environment';
 import { MaterialModule } from './material.module';
@@ -33,9 +32,7 @@ import { DashboardModule } from './store/feature-stores/dashboard/dashboard.modu
   declarations: [
     AppComponent,
     LoginComponent,
-    ForgotPasswordComponent,
     RegisterComponent
-    // TopNavComponent
   ],
   imports: [
     BrowserModule,

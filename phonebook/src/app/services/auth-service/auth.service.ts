@@ -19,17 +19,12 @@ export class AuthenticationService {
 
     authenticate(phoneNumber: string, password: string)  {
 
-       return this.httpClient.put<UserWithPhoneEntries>(`${Routes.AUTHENTICATE}`, null, {
+       return this.httpClient.put<IUser>(`${Routes.AUTHENTICATE}`, null, {
             params: {
                 phoneNumber,
                 password
             }
-        }).pipe(
-            catchError((error) => {
-                console.log(error);
-                return of({user: null, phoneEntries: null});
-            })
-        );
+        });
     }
 
     register(phoneNumber: string, password: string, name: string) {

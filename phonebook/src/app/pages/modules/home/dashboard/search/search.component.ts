@@ -47,12 +47,12 @@ export class SearchComponent implements OnInit, OnDestroy {
     }
 
     onSubmit() {
-            const searchCriteria: SearchCriteria = {
-                entryName: this.searchForm.value.entryName,
-                entryNumber: this.searchForm.value.entryNumber
-            }
+        const searchCriteria: SearchCriteria = {
+            entryName: this.searchForm.value.entryName,
+            entryNumber: this.searchForm.value.entryNumber
+        };
 
-            this.store$.dispatch(search({ searchCriteria }));
+        this.store$.dispatch(search({ searchCriteria }));
 
     }
 
@@ -60,5 +60,11 @@ export class SearchComponent implements OnInit, OnDestroy {
         this.searchForm.reset();
         this.searchForm.markAsPristine();
         this.searchForm.markAsUntouched();
+
+        const searchCriteria: SearchCriteria = {
+            entryName: this.searchForm.value.entryName,
+            entryNumber: this.searchForm.value.entryNumber
+        };
+        this.store$.dispatch(search({ searchCriteria }));
     }
 }

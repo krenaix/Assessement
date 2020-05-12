@@ -1,7 +1,7 @@
 import { ValidatorFn, AbstractControl, ValidationErrors, FormGroup } from '@angular/forms';
 
 export const MinimumSearchValidatorFn: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
-    var isValid = false;
+    let isValid = false;
     if (control.get('entryName') && control.get('entryName').value) {
         isValid = true;
     }
@@ -10,4 +10,4 @@ export const MinimumSearchValidatorFn: ValidatorFn = (control: FormGroup): Valid
     }
     return !isValid ? { minimumSearch: true } : null;
 
-}
+};

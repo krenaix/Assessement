@@ -9,8 +9,6 @@ import { JWTAccessToken } from 'src/app/models/interfaces';
 export class TokenService {
 
     tokenExpired(token: string) {
-        console.group('tokenExpired');
-        console.log('checking token validity');
 
         if (!token) {
             return false;
@@ -20,11 +18,10 @@ export class TokenService {
             const tokenObject = jwtDecode<{ exp: number }>(token);
 
             const expiryDateInSecondsSinceEpoch = tokenObject.exp;
-            console.log(expiryDateInSecondsSinceEpoch);
+
             const now = new Date();
             const nowInSecondsSinceEpoch = Math.floor(now.getTime() / 1000);
-            console.log(nowInSecondsSinceEpoch);
-            console.groupEnd();
+
             return nowInSecondsSinceEpoch > expiryDateInSecondsSinceEpoch;
         } catch (e) {
             return false;

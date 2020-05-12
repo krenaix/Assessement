@@ -1,2 +1,2 @@
 export * from './status.enum';
-export * from './contacts-columns.enum'
+export * from './contacts-columns.enum';

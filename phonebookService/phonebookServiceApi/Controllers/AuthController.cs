@@ -27,16 +27,12 @@ namespace phonebookServiceApi.Controllers
         public IActionResult Authenticate(string phoneNumber, string password)
         {
              _logger.LogInformation($"[Authentication Controller] Received Authenticate request, phoneNumber:{phoneNumber}");
-            var userWithPhoneEntries = _authService.Authenticate(phoneNumber, password);
+            var user = _authService.Authenticate(phoneNumber, password);
 
-            if (userWithPhoneEntries.user == null)
+            if (user == null)
                 return BadRequest(new { message = "Phone number or password is incorrect" });
 
-            dynamic user_and_phone_entries = new {
-                user  = userWithPhoneEntries.user,
-                phoneEntries = userWithPhoneEntries.phoneWithEntries
-            };
-            return Ok(user_and_phone_entries);
+            return Ok(user);
         }
         
         [AllowAnonymous]

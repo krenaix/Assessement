@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 import { Store } from '@ngrx/store';
 import { register } from 'src/app/store/feature-stores/authentication/actions';
 import { registerStatus } from 'src/app/store/feature-stores/authentication/selectors';
+import { NumberValidatorFn } from 'src/app/shared/validators/number.validator';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,7 @@ import { registerStatus } from 'src/app/store/feature-stores/authentication/sele
 export class RegisterComponent implements OnInit, OnDestroy {
 
   registerForm  = new FormGroup({
-    cellphoneNumber: new FormControl('', [Validators.required]),
+    cellphoneNumber: new FormControl('', [Validators.required, NumberValidatorFn]),
     name: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
     confirmPassword: new FormControl('', Validators.required)

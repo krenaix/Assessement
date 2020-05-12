@@ -20,7 +20,7 @@ namespace phonebookServiceApi.services.decorators.authenticationDecorators
             _authRepository = authRepository;
         }
 
-        public (UserDto user, PhoneEntriesDTO phoneWithEntries) Authenticate(string phoneNumber, string password)
+        public UserDto Authenticate(string phoneNumber, string password)
         {
             return _authService.Authenticate(phoneNumber, password);
         }

@@ -11,6 +11,6 @@ namespace phonebookServiceApi.Repository.Interfaces
         bool CheckUserExists(string phoneNumber);
         User GetUserByPhoneNumber(string phoneNumber);
 
-        (User user, PhoneEntries phoneWithEntries) Login (string phoneNumber);
+        User Login (string phoneNumber);
     }
 }

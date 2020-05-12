@@ -1,0 +1,66 @@
+<mat-progress-bar *ngIf="(createContactStatus$ | async) === status.Busy" mode="indeterminate"></mat-progress-bar>
+<br>
+<br>
+<form [formGroup]="createContactForm" (ngSubmit)="onSubmit()">
+
+
+    <br>
+    <div>
+        <div class="card">
+
+            <div class="row">
+                <div class="col-md-10 offset-sm-1">
+                    <div class="card-block">
+                        <br>
+                        <h2>
+                            <strong>{{title}}</strong>
+                        </h2>
+                        <div>Please capture the contacts details below</div>
+                        <br>
+
+                        <br>
+                        <div id="conDiv" class="row">
+                            <div class="col-md-6">
+                                <mat-form-field class="matField">
+                                    <input formControlName="name" matInput placeholder="Contact name" required
+                                        autocomplete="name">
+                                    <mat-hint>e.g Rimuru Tempest</mat-hint>
+                                    <mat-error *ngIf="createContactForm.get('name').hasError('required')">Contact name
+                                        is
+                                        required
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="matField">
+                                    <input formControlName="phoneNumber" matInput placeholder="Cellphone number" required autocomplete="mobile">
+                                    <mat-hint>e.g 0764523658 or +27764523658 or 27764523658</mat-hint>
+                                    <mat-error *ngIf="createContactForm.get('phoneNumber').hasError('required')">
+                                        Cellphone number is
+                                        required
+                                    </mat-error>
+                                    <mat-error *ngIf="createContactForm.get('phoneNumber').errors?.invalidDataType">
+                                        Invalid cellphone number. cellphone number cannot contain non numeric characters, spaces or tabs
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <button (click)="cancel()" class="btn btn-md btn-secondary ">Cancel</button>
+                        <button type="submit" class="btn btn-md btn-primary float-md-right"
+                            [disabled]="!createContactForm.valid">Save</button>
+                        &nbsp;
+
+                        <br>
+                        <br>
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,49 @@
+<!-- <h2 mat-dialog-title>Edit Contact</h2> -->
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="editContactForm" (ngSubmit)="onSubmit()">
+        <mat-progress-bar *ngIf="(editCocontactStatus$ | async) === status.Busy" mode="indeterminate"></mat-progress-bar>
+        <br>
+        <mat-tab-group>
+            <mat-tab label="Edit contact">
+                <ng-container>
+                    
+                    <div id="conDiv" class="row">
+                        <div class="col-md-6">
+                            <mat-form-field class="matField">
+                                <input formControlName="name" matInput placeholder="Contact name" required
+                                    autocomplete="name">
+                                <mat-hint>e.g Rimuru Tempest</mat-hint>
+                                <mat-error *ngIf="editContactForm.get('name').hasError('required')">Contact name is required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-form-field class="matField">
+                                <input formControlName="phoneNumber" matInput placeholder="Cellphone number" required autocomplete="mobile">
+                                <mat-hint>e.g 0764523658 or +27764523658 or 27764523658</mat-hint>
+                                <mat-error *ngIf="editContactForm.get('phoneNumber').hasError('required')">
+                                    Cellphone number is
+                                    required
+                                </mat-error>
+                                <mat-error *ngIf="editContactForm.get('phoneNumber').errors?.invalidDataType">
+                                    Invalid cellphone number. cellphone number cannot contain non numeric characters, spaces or tabs
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+                    <br>
+                </ng-container>
+
+            </mat-tab>
+        </mat-tab-group>
+    </form>
+    <ng-template #loading>
+        <mat-spinner class="spinner"></mat-spinner>
+    </ng-template>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="close()" [disabled]="(editStatus$ | async) === status.Busy" class="btn-secondary">Cancel</button>
+    <button mat-button (click)="save()" [disabled]="!editContactForm.valid || (editStatus$ | async) === status.Busy" class="btn-primary">Save</button>
+</mat-dialog-actions>

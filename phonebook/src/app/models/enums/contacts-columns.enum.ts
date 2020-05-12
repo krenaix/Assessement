@@ -1,5 +1,7 @@
 export enum ContactColumns {
     Id = 'id',
     ContactName = 'ContactName',
-    ContactNumber = 'ContactNumber'
+    ContactNumber = 'ContactNumber',
+    Edit = 'Edit',
+    Remove = 'Remove',
 }

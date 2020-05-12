@@ -21,7 +21,7 @@
 
           <!-- Nav Item - Dashboard -->
           <li class="nav-item">
-            <a class="nav-link" routerLink="./home">
+            <a class="nav-link" [routerLink]="['dashboard']">
               <i class="fas fa-fw fa-tachometer-alt"></i>
               <span>Home</span></a>
           </li>
@@ -36,7 +36,7 @@
 
           <!-- Nav Item - Pages Collapse Menu -->
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/signup']" routerLinkActive="router-link-active" >Create New Contact</a>
+            <a class="nav-link" [routerLink]="['new-contact']" routerLinkActive="router-link-active" >Create New Contact</a>
           </li>
         </ul>
         <!-- End of Sidebar -->

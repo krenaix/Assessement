@@ -1,4 +1,4 @@
 export const environment = {
-  production: true,
+  production: false,
   serviceUrl: 'http://localhost:5000'
 };

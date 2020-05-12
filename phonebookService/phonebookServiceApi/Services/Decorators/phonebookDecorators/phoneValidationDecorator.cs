@@ -24,5 +24,25 @@ namespace phonebookServiceApi.services.decorators.phonebookDecorators
         {
             return _phoneService.SearchPhonebook(searchName, searchNumber, phonebookId);
         }
+
+        public PhoneEntriesDTO RemoveContact(string searchName, string searchNumber, int phonebookId, int entryId)
+        {
+            return _phoneService.RemoveContact(searchName, searchNumber, phonebookId, entryId);
+        }
+
+        public PhoneEntriesDTO GetPhoneEntries(int userId)
+        {
+            return _phoneService.GetPhoneEntries(userId);
+        }
+
+        public bool CreateContact(EntryDTO newEntry, int phonebookId)
+        {
+            return _phoneService.CreateContact(newEntry, phonebookId);
+        }
+
+        public bool EditContact(EntryDTO existingEntry)
+        {
+            return _phoneService.EditContact(existingEntry);
+        }
     }
 }

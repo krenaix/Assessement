@@ -8,6 +8,9 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchComponent } from './dashboard/search/search.component';
+import { ContactsComponent } from './dashboard/contacts/contacts.component';
+import { NewContactComponent } from './new-contact/new-contact.component';
+import { EditContactComponent } from './dashboard/edit-contact/edit-contact.component';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { SearchComponent } from './dashboard/search/search.component';
         LeftNavComponent,
         HomeComponent,
         DashboardComponent,
-        SearchComponent
+        SearchComponent,
+        ContactsComponent,
+        NewContactComponent,
+        EditContactComponent
     ],
     imports: [
         CommonModule,
@@ -25,5 +31,8 @@ import { SearchComponent } from './dashboard/search/search.component';
         HomeRoutingModule,
         SharedModule
     ],
+    entryComponents: [
+        EditContactComponent
+      ],
 })
 export class HomeModule { }

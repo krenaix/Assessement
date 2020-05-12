@@ -18,7 +18,7 @@ namespace phonebookServiceApi.services.decorators.authenticationDecorators
             _logger = logger;
         }
 
-        public (UserDto user, PhoneEntriesDTO phoneWithEntries) Authenticate(string phoneNumber, string password)
+        public UserDto Authenticate(string phoneNumber, string password)
         {
             try
             {

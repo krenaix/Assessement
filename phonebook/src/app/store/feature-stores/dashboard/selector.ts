@@ -18,3 +18,18 @@ export const getDashboardLoadingStatus = createSelector(
     dashboardFeature,
     state => state.status
 );
+
+export const getSearchCriteria = createSelector(
+    dashboardFeature,
+    state => state.searchCriteria
+);
+
+export const getCreateContactStatus = createSelector(
+    dashboardFeature,
+    state => state.createContactStatus
+);
+
+export const getEditContactStatus = createSelector(
+    dashboardFeature,
+    state => state.editContactStatus
+);

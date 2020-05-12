@@ -10,5 +10,6 @@ public class AutoMapping: Profile
         CreateMap<User, UserDto>();
         CreateMap<PhoneEntries, PhoneEntriesDTO>();
         CreateMap<Entry, EntryDTO>();
+        CreateMap<EntryDTO, Entry>();
     }
 }
