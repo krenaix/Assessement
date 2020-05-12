@@ -22,7 +22,11 @@ If using VS Code open a terminal and type `dotnet restore` this will restore all
 once that is done in the same terminal run the command `dotnet run`.
 This should start up the server
 
+## Database
+Again to make things simple so that you don't have to set up mySql of MSSQL I a sqlLite database, you can find this in the `database` folder of the backend application. to view the database you can install an sqlLite IDE ( they are very light weight and quick to download), I use `DB Browser for SQLite` you can find it at `https://sqlitebrowser.org/`
+
 ## Moving On
 Once the server is running go back to the front end application on your browser and either register a new account by clicking on the registration link or login using this predefined account `Cellphone Numbeer: 0746477427, Password: Cool@bAlive`
 
 Happy Tetsting!!
+
