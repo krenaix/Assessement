@@ -20,15 +20,11 @@ namespace phonebookServiceApi.services
     {
         readonly IPhonebookRepository _phoneRepository;
 
-        private readonly AppSettings _appSettings;
-
-        private readonly IPasswordHasher _passwordHasher;
         private readonly IMapper _mapper;
 
-        public PhonebookService(IPhonebookRepository phoneRepository, IOptions<AppSettings> appSettings, IMapper mapper)
+        public PhonebookService(IPhonebookRepository phoneRepository, IMapper mapper)
         {
             _phoneRepository = phoneRepository;
-            _appSettings = appSettings.Value;
             _mapper = mapper;
         }
 
