@@ -1,0 +1,51 @@
+<app-top-nav></app-top-nav>
+<div class="row contain">
+  <section class="col-md-2 overflow-visible h-100 d-none d-sm-block" [class.contain]="!isScrolling"
+    [class.containScrolling]="isScrolling">
+    <!-- <div class="row"> -->
+
+    <div class="">
+      <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+          <!-- Sidebar - Brand -->
+          <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+            <div class="sidebar-brand-icon rotate-n-15">
+            </div>
+            <div class="sidebar-brand-text mx-3">The <b>PHONE</b><i>book</i></div>
+          </a>
+
+          <!-- Divider -->
+          <hr class="sidebar-divider my-0">
+
+          <!-- Nav Item - Dashboard -->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="./home">
+              <i class="fas fa-fw fa-tachometer-alt"></i>
+              <span>Home</span></a>
+          </li>
+
+          <!-- Divider -->
+          <hr class="sidebar-divider">
+
+          <!-- Heading -->
+          <div class="sidebar-heading">
+            <!-- client -->
+          </div>
+
+          <!-- Nav Item - Pages Collapse Menu -->
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/signup']" routerLinkActive="router-link-active" >Create New Contact</a>
+          </li>
+        </ul>
+        <!-- End of Sidebar -->
+
+
+      </div>
+
+
+    </div>
+  </section>
+  
+</div>

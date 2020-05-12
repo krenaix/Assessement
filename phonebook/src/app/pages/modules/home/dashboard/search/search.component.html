@@ -1,0 +1,27 @@
+<mat-accordion [togglePosition]="'before'">
+    <mat-expansion-panel expanded="true" class="custom-expansion-panel">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Search Contacts
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+        <div class="row d-flex">
+            <div class="col-md-6">
+                <mat-form-field class="inputs">
+                    <input formControlName="entryName" matInput placeholder="Contact Name">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="inputs">
+                    <input formControlName="entryNumber" matInput placeholder="Contact number">
+                </mat-form-field>
+            </div>
+        </div>
+        <mat-action-row>
+            <button type="submit" [disabled] = "!searchForm.valid" mat-button class="btn-primary">Search</button>
+            <button [disabled] = "!searchForm.valid" mat-button class="btn-secondary" (click)="onClear()">Clear</button>
+        </mat-action-row>
+    </form>
+    </mat-expansion-panel>
+</mat-accordion>

@@ -1,0 +1,110 @@
+@import "../scss/custom-controls/phoenix-spinner.control.scss";
+
+.card.customClass,
+  .card.customClass .card-header,
+  .panel.customClass {
+    background-color:app-color("white");
+  padding-left: 0;
+    border: none;
+  }
+  .panel.customClass .panel-body {
+    background-color: app-color("white");
+  }
+
+  .card.assumptionCustomClass,
+  .card.assumptionCustomClass .card-header,
+  .panel.assumptionCustomClass {
+    background-color:app-color("white");
+  
+    border: none;
+}
+
+.panel.assumptionCustomClass .panel-body {
+    height: 120px;
+    border-radius: 5px;
+    background-color: app-color("light-gray");
+  }
+
+  .hr-sect {
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+	// color: rgba(0, 0, 0, 0.35);
+   margin: 8px 0px;
+   width:100%;
+}
+// .hr-sect::before,
+.hr-sect::after {
+	content: "";
+	flex-grow: 1;
+	background: app-color("hrSect");
+	height: 1px;
+	font-size: 0px;
+	line-height: 0px;
+	margin: 0px 8px;
+}
+
+.fasrequiredAsterisk{
+  color: app-color("red");
+  background-position: right top;
+  font-size: 10px;
+  
+}
+
+label.requiredAsterisk{
+  word-wrap: break-word;
+}
+.requiredAsterisk:after { content:"*";
+color: app-color("red");
+background-position: right top;
+}
+
+
+
+.hr-text {
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  height: 1.5em;
+  opacity: .5;
+  &:before {
+    content: '';
+    // use the linear-gradient for the fading effect
+    // use a solid background color for a solid bar
+    background: linear-gradient(to right, transparent, #818078, transparent);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+  }
+  &:after {
+    content: attr(data-content);
+    position: relative;
+    display: inline-block;
+    color: black;
+
+    padding: 0 .5em;
+    line-height: 1.5em;
+    // this is really the only tricky part, you need to specify the background color of the container element...
+    color: #818078;
+    background-color: #fcfcfa;
+  }
+}
+
+
+
+.addressDiv {
+  border: 1px solid #e3e6f0;
+}
+
+.addresstitle {
+  padding-top: 5px;
+}
+
+.customerror{
+  color: red;
+}

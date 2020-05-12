@@ -1,0 +1,63 @@
+<mat-progress-bar *ngIf="(loginStatus$ | async) === statusEnum.Busy" mode="query" ></mat-progress-bar>
+<div class="bg-gradient-primary2 centre">
+  <div class="container">
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+      <div class="col-xl-10 col-lg-12 col-md-9">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">Welcome to The <span><b>PHONE</b><i>book</i></span></h1>
+                  </div>
+                  <form class="user" [formGroup]="lgForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <mat-form-field class="full-width">
+                          <input formControlName="phoneNumber" matInput placeholder="Cellphone number" autocomplete="mobile">
+                          <mat-error *ngIf="lgForm.get('phoneNumber').hasError('required')">Please enter your username
+                          </mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field class="full-width">
+                          <input type="password" formControlName="password" matInput placeholder="Password" autocomplete="current-password">
+                          <mat-error *ngIf="lgForm.get('password').hasError('required')">Please enter your password
+                          </mat-error>
+                      </mat-form-field>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-user btn-block">
+                      Login
+                    </button>
+                    <span></span>
+                    
+                  </form>
+                  <div class="text-center" *ngIf="(loginStatus$ | async) === statusEnum.Failed">
+                    <p class="invalid">Oops something went wrong during login, please check that you have supplied the correct email and password.</p>
+                  </div>
+                  <hr>
+                  <div class="text-center">
+                    don't have an account?
+                    <a class="small" href="" [routerLink]="['../register']"
+                      routerLinkActive="router-link-active"> Click here to register.</a>
+                  </div>
+                  <!-- <hr>
+                  <div class="text-center">
+                    <a class="small" href="" [routerLink]="['../forgot-password']"
+                      routerLinkActive="router-link-active">Forgot Password?</a>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

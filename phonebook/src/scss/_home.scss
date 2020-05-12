@@ -1,0 +1,39 @@
+@import './global';
+
+#cards-multiple {
+	height:calc(100vh - 60px);
+	//  background: url(./assets/images/blue_phoenix.jpg) no-repeat;
+	background-size: cover;
+    padding:50px 0;
+    // background-color: #496FDB;
+    // background: linear-gradient(93deg,#f5f7f9 50%,#fff 50%,#fff 100%);
+    background: #f5f7f9;
+}
+#cards-multiple .icon-user {
+	font-size:50px;
+	color:#9bcc54;
+}
+.welcome-message {
+	//background:app-color("welcome-message");
+	padding:15px 20px;
+}
+
+
+
+.menus{
+    -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.04);
+	-moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.04);
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.04);
+	border: none;
+    height: 200px;
+    cursor: pointer;
+    // background-color: transparent;
+    .onboarding{
+        // background: url(background("client-onboarding")) no-repeat;
+        color: app-color("black");
+        background-size:contain;
+        .card-text{
+            font-size: 150%;
+        }
+    }
+}

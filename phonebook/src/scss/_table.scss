@@ -1,0 +1,50 @@
+
+// .horizontally-scrollable-table {
+//   table-layout: fixed;
+
+//   th {
+//     border-color: mat-color($blue-colors, 500);
+//     width: 200px;
+
+//     position: sticky;
+//     top: 0;
+//     padding: 0 1rem;
+//   }
+
+//   td {
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     padding: 0 1rem;
+//   }
+// }
+
+.bold-row {
+  font-weight: 700;
+}
+
+.extra-large-column {
+  width: 250px !important;
+  min-width: 250px !important;
+}
+
+.large-column {
+  width: 200px !important;
+  min-width: 200px !important;
+}
+
+.medium-column {
+  width: 150px !important;
+  min-width: 150px !important;
+}
+
+.small-column {
+  width: 110px !important;
+  min-width: 110px !important;
+}
+
+
+.extra-smal-column {
+    width: 55px;
+    min-width: 55px;
+}

@@ -1,0 +1,25 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <br>
+  <div class="row-1 offset-1 mb-5">
+    <app-search></app-search>
+  </div>
+  <div class="row">
+    <div class="col-xl-12 col-md-12 mb-4">
+      <div class="card  shadow h-100 py-2">
+        <div class="text-lg font-weight-bold text-gray-800 text-uppercase mb-1 text-center">Your Contact List</div>
+        <div class="card-body leaderboard-card-body" *ngIf="(dashboardLoadStatus$ | async) === status.Done; else loadingPhonebook">
+          <app-contacts [inDataSource]="(contacts$ | async)"></app-contacts>
+        </div>
+        <ng-template #loadingPhonebook>
+          <div class="card-body leaderboard-card-body">
+            <mat-spinner></mat-spinner>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.container-fluid -->

@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Aktiv Grotesk';
+    src: url('./assets/activ-grotesk/hinted-AktivGrotesk-Bold.eot');
+    src: local('Aktiv Grotesk Bold'), local('AktivGrotesk-Bold'),
+        url('./assets/activ-grotesk/hinted-AktivGrotesk-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./assets/activ-grotesk/hinted-AktivGrotesk-Bold.woff2') format('woff2'),
+        url('./assets/activ-grotesk/hinted-AktivGrotesk-Bold.woff') format('woff'),
+        url('./assets/activ-grotesk/hinted-AktivGrotesk-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aktiv Grotesk';
+    src: url('./assets/activ-grotesk/hinted-AktivGrotesk-Light.eot');
+    src: local('Aktiv Grotesk Light'), local('AktivGrotesk-Light'),
+        url('./assets/activ-grotesk/hinted-AktivGrotesk-Light.eot?#iefix') format('embedded-opentype'),
+        url('./assets/activ-grotesk/hinted-AktivGrotesk-Light.woff2') format('woff2'),
+        url('./assets/activ-grotesk/hinted-AktivGrotesk-Light.woff') format('woff'),
+        url('./assets/activ-grotesk/hinted-AktivGrotesk-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aktiv Grotesk';
+    src: url('./assets/activ-grotesk/hinted-AktivGrotesk-Regular.eot');
+    src: local('Aktiv Grotesk'), local('AktivGrotesk-Regular'),
+        url('./assets/activ-grotesk/hinted-AktivGrotesk-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./assets/activ-grotesk/hinted-AktivGrotesk-Regular.woff2') format('woff2'),
+        url('./assets/activ-grotesk/hinted-AktivGrotesk-Regular.woff') format('woff'),
+        url('./assets/activ-grotesk/hinted-AktivGrotesk-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aktiv Grotesk';
+    src: url('./assets/activ-grotesk/hinted-AktivGrotesk-Medium.eot');
+    src: local('Aktiv Grotesk Medium'), local('AktivGrotesk-Medium'),
+        url('./assets/activ-grotesk/hinted-AktivGrotesk-Medium.eot?#iefix') format('embedded-opentype'),
+        url('./assets/activ-grotesk/hinted-AktivGrotesk-Medium.woff2') format('woff2'),
+        url('./assets/activ-grotesk/hinted-AktivGrotesk-Medium.woff') format('woff'),
+        url('./assets/activ-grotesk/hinted-AktivGrotesk-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}

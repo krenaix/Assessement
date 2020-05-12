@@ -1,0 +1,309 @@
+// Global component styles
+@import './toast';
+@import './variables';
+
+$app-colors:(
+  "menu-headings": white,
+  "welcome-message": #fff,
+  "white": white,
+  "grey": grey,
+  "black": #484848,
+  "hrSect": #E0E0E0,
+  "crimson": #9F1E22,
+  "dark-gray": #37434b,
+  "quartanary": #4F1760,
+  "azure": #1421A7,
+  "red" : red
+);
+
+@function app-color($key){
+  @return map-get($app-colors, $key);
+};
+
+$backgrounds:(
+  "client-onboarding": "./assets/images/Onboarding.jpg"
+);
+
+@function background($key){
+  @return map-get($map: $backgrounds, $key: $key)
+};
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow-x: hidden;
+  
+//   background: none;
+//   @extend .bg-gradient-primary;
+}
+.secondary {
+	border: 2px solid app-color("dark-gray") !important;
+	// background-color: app-color("dark-gray") !important;
+	// color: app-color("white") !important;
+	
+}
+
+.btn-secondary{
+	background-color: app-color("dark-gray") !important;
+	color: app-color("white") !important;
+}
+
+.btn-secondary:hover{
+	border: 0.5px solid app-color("dark-gray") !important;
+	background-color: app-color("white") !important;
+	color: app-color("dark-gray") !important;
+}
+
+.secondary:hover {
+	// border: 2px solid app-color("dark-gray") !important;
+	background-color: app-color("dark-gray") !important;
+	color: app-color("white") !important;
+	
+}
+
+.tertiary {
+	border: 2px solid app-color("crimson") !important;
+	// background-color: app-color("crimson") !important;
+	// color: app-color("white") !important;
+}
+.tertiary:hover {
+	// border: 2px solid app-color("crimson") !important;
+	background-color: app-color("crimson") !important;
+	color: app-color("white") !important;
+}
+
+.quaternary {
+	border: 2px solid app-color("quartanary") !important;
+	// background-color: app-color("quartanary") !important;
+	// color: app-color("white") !important;
+}
+.quaternary:hover {
+	// border: 2px solid app-color("quartanary") !important;
+	background-color: app-color("quartanary") !important;
+	color: app-color("white") !important;
+}
+
+.quinary {
+	border: 2px solid app-color("azure") !important;
+	// background-color: app-color("azure") !important;
+	// color: app-color("white") !important;
+}
+
+.quinary:hover {
+	// border: 2px solid app-color("azure") !important;
+	background-color: app-color("azure") !important;
+	color: app-color("white") !important;
+}
+
+a {
+  &:focus {
+    outline: none;
+  }
+}
+
+// Main page wrapper
+#wrapper {
+  display: flex;
+  height: 100%;
+  #content-wrapper {
+    background-color: $gray-100;
+    width: 100%;
+    overflow-x: hidden;
+    #content {
+      flex: 1 0 auto;
+    }
+  }
+}
+
+// Set container padding to match gutter width instead of default 15px
+.container,
+.container-fluid {
+  padding-left: $grid-gutter-width;
+  padding-right: $grid-gutter-width;
+}
+
+// Scroll to top button
+.scroll-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  text-align: center;
+  color: $white;
+  background: fade-out($gray-800, .5);
+  line-height: 46px;
+  &:focus,
+  &:hover {
+    color: app-color("white");
+  }
+  &:hover {
+    background: $gray-800;
+  }
+  i {
+    font-weight: 800;
+  }
+}
+
+
+/* --------------------------------------------------------------
+PRIMARY NAV
+-------------------------------------------------------------- */
+
+nav#primary-nav ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	width: 100%;
+	position: relative;
+	z-index: 999;
+}
+nav#primary-nav ul li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	float: left;
+	transition: 0.2s;
+}
+nav#primary-nav ul li a {
+	line-height: 60px;
+	padding: 0 15px;
+	border-right: 1px solid #9bcc54;
+	display: block;
+	transition: 0.2s;
+	color: #9bcc54;
+}
+nav#primary-nav ul li a:hover nav#primary-nav ul li:hover {
+	color: red;
+}
+nav#primary-nav ul li a.home-btn {
+	width: 60px;
+	background: #0d1621;
+	font-size: 20px;
+	color: #9bcc54;
+	border-left: 0;
+	border-right: 1px solid #9bcc54;
+	text-align: center;
+}
+nav#primary-nav ul li a.home-btn:hover {
+	background: #0a111a;
+}
+nav#primary-nav .dropdown {
+	-webkit-box-shadow: 0px 2px 0px 0px rgba(34, 41, 57, 0.06);
+	-moz-box-shadow: 0px 2px 0px 0px rgba(34, 41, 57, 0.06);
+	box-shadow: 0px 2px 0px 0px rgba(34, 41, 57, 0.06);
+	border-left: 1px solid #eae9ea;
+}
+nav#primary-nav li.user-login {
+	border-left: 1px solid #9bcc54;
+	transition: 0.2s;
+	background: #0f1722;
+}
+nav#primary-nav li i.icon-user {
+	font-size: 20px;
+	position: relative;
+	top: 2px;
+	margin-right: 5px;
+}
+nav#primary-nav li.user-login span {
+	color: #9bcc54;
+	line-height: 60px;
+	padding: 0 15px;
+}
+nav#primary-nav li.user-login a {
+	border-right: 0;
+}
+nav#primary-nav ul>li:hover {
+	background: #0a1827;
+	cursor: pointer;
+}
+nav#primary-nav ul li ul li {
+	border-bottom: 1px solid #eee;
+}
+nav#primary-nav ul li ul li.logout-btn {
+	padding: 0 15px;
+	color: #9bcc54;
+}
+nav#primary-nav ul li ul li, nav#primary-nav ul li ul li a {
+	line-height: 40px;
+}
+#primary-nav ul li ul {
+	background: #fff;
+	visibility: hidden;
+	opacity: 0;
+	width: 150px;
+	position: absolute;
+	transition: all 0.5s ease;
+	margin-top: 0;
+	right: 0;
+	display: none;
+}
+#primary-nav ul li ul li {
+	clear: both;
+	width: 100%;
+	background: #fff;
+}
+#primary-nav ul li:hover>ul, #primary-nav ul li ul:hover {
+	visibility: visible;
+	opacity: 1;
+	display: block;
+}
+nav#primary-nav ul>li>ul>li:hover, nav#primary-nav ul>li>ul>li a:hover {
+	background: #f7f8f8;
+	cursor: pointer;
+	color: #9bcc54;
+}
+/* --------------------------------------------------------------
+SECONDARY NAV
+-------------------------------------------------------------- */
+
+nav#secondary-nav ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	width: 100%;
+}
+nav#secondary-nav ul li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	float: left;
+}
+nav#secondary-nav ul li a {
+	line-height: 59px;
+	padding: 0 15px;
+	border-right: 1px solid #e8e9ed;
+	display: block;
+	color: #727985;
+}
+nav#secondary-nav ul li a:hover {
+	background: #fbfcfc;
+	color: #717985
+}
+
+.chart-items {
+	color:#341943;
+	cursor: pointer;
+	&:active,
+      &:focus,
+      &:hover {
+		color: $primary;
+        i {
+          color: $primary;
+		}
+	}
+}
+
+
+.active-chart-item{
+		color: $primary;
+}
+
+.matField {
+    width: 100% !important;
+}

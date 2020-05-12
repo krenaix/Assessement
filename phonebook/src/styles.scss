@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../src/scss/variables";
+@import "assets/activ-grotesk/fonts";
+@import "assets/icon-font/style";
+@import './scss/bootstrap/scss/bootstrap.scss';
+
+@import "scss/typography.scss";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~material-icons/css/material-icons.scss';
+
+// Import Custom Mixins and Components
+@import "../src/scss/mixins.scss";
+@import "../src/scss/global.scss";
+@import "../src/scss/utilities.scss";
+
+// Custom Components
+@import "../src/scss/dropdowns.scss";
+@import "../src/scss/navs.scss";
+@import "../src/scss/buttons.scss";
+@import "../src/scss/cards.scss";
+@import "../src/scss/charts.scss";
+@import "../src/scss/login.scss";
+@import "../src/scss/error.scss";
+@import "../src/scss/footer.scss";
+@import "../src/scss/home";
+@import "../src/scss/form";
+@import "../src/scss/custom";
+@import "scss/table";
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

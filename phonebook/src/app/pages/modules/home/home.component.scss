@@ -1,0 +1,16 @@
+
+.cardBody{
+    min-height: 10em;
+}
+
+::ng-deep body{
+    background-color: white;
+    background-image: linear-gradient(180deg, white 10%, white 100%);
+    background-size: cover;
+    
+  }
+
+  .main{
+    width:100%;
+    top: 70px;
+  }

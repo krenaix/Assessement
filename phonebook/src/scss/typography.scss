@@ -1,0 +1,32 @@
+@import '~@angular/material/theming';
+
+$typography: mat-typography-config(
+    $font-family: "'Aktiv Grotesk', Arial, Helvetica, sans-serif",
+    $headline: mat-typography-level(24px, 32px, 300),
+);
+
+// $typography: mat-typography-config(
+//     $font-family: "'Aktiv Grotesk', Arial, Helvetica, sans-serif",
+//     $display-4: mat-typography-level(10px, 10px, 200),
+//     $display-3: mat-typography-level(10px, 10px, 200),
+//     $display-2: mat-typography-level(10px, 10px, 200),
+//     $display-1: mat-typography-level(10px, 10px, 200),
+//     $headline: mat-typography-level(24px, 32pxpx, 300), // h1
+//     $title: mat-typography-level(10px, 10px, 200), // h2
+//     $subheading-2: mat-typography-level(10px, 10px, 200), // h3
+//     $subheading-1: mat-typography-level(10px, 10px, 200), // h4
+//     $body-1: mat-typography-level(10px, 10px, 200), // p?
+//     $body-2: mat-typography-level(10px, 10px, 200),
+//     $caption: mat-typography-level(10px, 10px, 200),
+//     $button: mat-typography-level(10px, 10px, 200),
+//     $input: mat-typography-level(10px, 10px, 200)
+// );
+@include mat-core($typography);
+
+// access these with
+//    `mat-font-size($typography, headline)`
+// or
+//    `@include mat-typography-level-to-styles($typography, title)`
+// after importing:
+//    `@import 'src/assets/styles/typography';`
+// see: https://material.angular.io/guide/typography
