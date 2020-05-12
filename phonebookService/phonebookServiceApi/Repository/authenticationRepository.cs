@@ -13,15 +13,13 @@ namespace phonebookServiceApi.Repository.Data
     public class AuthenticationRepository : IAuthenticationRepository
     {
         private readonly PhonebookContext _phonebookContext;
-        private readonly AppSettings _appSettings;
 
 
         private string phonebook_text =  "'s phonebook";
 
-        public AuthenticationRepository(PhonebookContext phonebookContext, IOptions<AppSettings> appSettings)
+        public AuthenticationRepository(PhonebookContext phonebookContext)
         {
             _phonebookContext = phonebookContext;
-            _appSettings = appSettings.Value;
         }
 
         public bool CheckUserExists(string phoneNumber)

@@ -14,12 +14,10 @@ namespace phonebookServiceApi.Repository.Data
     public class PhonebookRepository : IPhonebookRepository
     {
         private readonly PhonebookContext _phonebookContext;
-        private readonly AppSettings _appSettings;
 
-        public PhonebookRepository(PhonebookContext phonebookContext, IOptions<AppSettings> appSettings)
+        public PhonebookRepository(PhonebookContext phonebookContext)
         {
             _phonebookContext = phonebookContext;
-            _appSettings = appSettings.Value;
         }
 
         public PhoneEntries GetPhoneEntries(int userId)
